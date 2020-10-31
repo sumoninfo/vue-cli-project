@@ -9,7 +9,6 @@
             <p slot="para">User also knows php</p>
             <p :slot="loader">See you again</p>
         </ListHelper>
-
     </div>
 </template>
 
