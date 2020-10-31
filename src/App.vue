@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <ListHelper>
+            <ul slot="listItem">
+                <li :key="list" v-for="list in lists">
+                    {{list}}
+                </li>
+            </ul>
+            <p slot="para">User also knows php</p>
+            <p :slot="loader">See you again</p>
+        </ListHelper>
+
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import ListHelper from "./Components/ListHelper";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        data() {
+            return {
+                lists: ["html", 'css', 'java'],
+                loader: ''
+            }
+        },
+        components: {
+            ListHelper
+        },
+        created() {
+            setTimeout(() => {
+                this.loader = 'other'
+            }, 3000)
+        }
+    }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
 </style>
