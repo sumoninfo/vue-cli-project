@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="container">
+        <Header :lists="lists"></Header>
         <ListHelper>
             <ul slot="listItem">
                 <li :key="list" v-for="list in lists">
@@ -14,7 +15,7 @@
 
 <script>
     import ListHelper from "./Components/ListHelper";
-
+    import Header from "./Components/inc/Header";
     export default {
         data() {
             return {
@@ -23,7 +24,7 @@
             }
         },
         components: {
-            ListHelper
+            ListHelper, Header
         },
         created() {
             setTimeout(() => {
