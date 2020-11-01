@@ -1,35 +1,28 @@
 <template>
     <div class="container">
-        <Header :lists="lists"></Header>
-        <ListHelper>
-            <ul slot="listItem">
-                <li :key="list" v-for="list in lists">
-                    {{list}}
-                </li>
-            </ul>
-            <p slot="para">User also knows php</p>
-            <p :slot="loader">See you again</p>
-        </ListHelper>
+        <button type="submit" @click="componentRender='Home'">Home</button>
+        <button type="submit" @click="componentRender='About'">About</button>
+        <button type="submit" @click="componentRender='Contact'">Contact</button>
+        <keep-alive>
+            <component :is="componentRender"></component>
+        </keep-alive>
     </div>
 </template>
 
 <script>
-    import ListHelper from "./Components/ListHelper";
-    import Header from "./Components/inc/Header";
+    import Home from "./Components/Home";
+    import About from "./Components/About";
+    import Contact from "./Components/Contact";
+
     export default {
         data() {
             return {
-                lists: ["html", 'css', 'java'],
-                loader: ''
+                componentRender: 'Home'
             }
         },
+
         components: {
-            ListHelper, Header
-        },
-        created() {
-            setTimeout(() => {
-                this.loader = 'other'
-            }, 3000)
+            Home, About, Contact
         }
     }
 </script>
