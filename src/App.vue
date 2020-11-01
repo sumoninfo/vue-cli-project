@@ -1,29 +1,17 @@
 <template>
     <div class="container">
-        <button type="submit" @click="componentRender='Home'">Home</button>
-        <button type="submit" @click="componentRender='About'">About</button>
-        <button type="submit" @click="componentRender='Contact'">Contact</button>
-        <keep-alive>
-            <component :is="componentRender"></component>
-        </keep-alive>
+        <div v-awesome.red.big="'Hello Sumon'"></div>
+        <div v-awesome.green.small="'Hello Sumon'"></div>
     </div>
 </template>
 
 <script>
-    import Home from "./Components/Home";
-    import About from "./Components/About";
-    import Contact from "./Components/Contact";
 
     export default {
         data() {
-            return {
-                componentRender: 'Home'
-            }
+            return {}
         },
 
-        components: {
-            Home, About, Contact
-        }
     }
 </script>
 <style>
