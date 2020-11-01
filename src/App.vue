@@ -1,21 +1,24 @@
 <template>
     <div class="container">
-        <p>{{text | upperCase | removedText}}</p>
+        <p>{{text}}</p>
+        <About/>
+        <Contact/>
     </div>
 </template>
 
 <script>
+    import About from "./Components/About";
+    import Contact from "./Components/Contact";
+
     export default {
         data() {
             return {
                 text: "Hello world"
             }
         },
-        filters: {
-            upperCase(value) {
-                return value.toUpperCase();
-            }
-        }
+        components: {
+            About, Contact
+        },
     }
 </script>
 <style>
