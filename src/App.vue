@@ -1,14 +1,6 @@
 <template>
     <div class="container">
-        <transition
-                name="appear"
-                enter-active-class="animate__animated animate__bounce"
-                leave-active-class="animate__animated animate__swing"
-        >
-            <div v-if="display" class="p-3 mb-3 bg-success text-white">Hello</div>
-        </transition>
-        <button @click="display=!display" class="btn btn-primary" type="submit">Toggle</button>
-
+        <p>{{text | upperCase | removedText}}</p>
     </div>
 </template>
 
@@ -16,7 +8,15 @@
     export default {
         data() {
             return {
-                display: false
+                text: "Hello world"
+            }
+        },
+        filters: {
+            upperCase(value) {
+                return value.toUpperCase();
+            },
+            removedText(value) {
+                return value.slice(1);
             }
         }
     }
