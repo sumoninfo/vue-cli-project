@@ -1,12 +1,19 @@
 <template>
     <div class="container">
-        <p>{{text}}</p>
-        <Contact/>
+        <div class="row">
+            <div class="col-md-6">
+                Router
+                <hr>
+                <Header></Header>
+                <hr>
+                <router-view></router-view>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-     import Contact from "./Components/Contact";
+    import Header from "./Components/inc/Header";
 
     export default {
         data() {
@@ -15,8 +22,8 @@
             }
         },
         components: {
-            Contact
-        },
+            Header
+        }
     }
 </script>
 <style>
