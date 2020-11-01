@@ -1,14 +1,12 @@
 <template>
     <div class="container">
         <p>{{text}}</p>
-        <About/>
         <Contact/>
     </div>
 </template>
 
 <script>
-    import About from "./Components/About";
-    import Contact from "./Components/Contact";
+     import Contact from "./Components/Contact";
 
     export default {
         data() {
@@ -17,7 +15,7 @@
             }
         },
         components: {
-            About, Contact
+            Contact
         },
     }
 </script>
