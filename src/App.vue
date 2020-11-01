@@ -14,9 +14,6 @@
         filters: {
             upperCase(value) {
                 return value.toUpperCase();
-            },
-            removedText(value) {
-                return value.slice(1);
             }
         }
     }
